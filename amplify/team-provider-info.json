@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-summize-staging-163220-authRole",
+      "UnauthRoleArn": "arn:aws:iam::711273050314:role/amplify-summize-staging-163220-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::711273050314:role/amplify-summize-staging-163220-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-summize-staging-163220-deployment",
+      "UnauthRoleName": "amplify-summize-staging-163220-unauthRole",
+      "StackName": "amplify-summize-staging-163220",
+      "StackId": "arn:aws:cloudformation:ca-central-1:711273050314:stack/amplify-summize-staging-163220/05bc5d70-143f-11ee-a58a-06fcf53db3b8",
+      "AmplifyAppId": "d329paq98wakho"
+    },
+    "categories": {
+      "auth": {
+        "Summize": {}
+      }
+    }
+  }
+}
