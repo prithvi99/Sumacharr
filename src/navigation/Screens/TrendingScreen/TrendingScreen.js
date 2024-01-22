@@ -23,7 +23,7 @@ export default function TrendingScreen() {
     //Try to fetch data by calling category query and catch errors
     try {
       setRefreshing(true); //set loading to true while fetching data
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // await new Promise(resolve => setTimeout(resolve, 2000));
 
       //passing categoryQuery ('trending') as paramater - awaiting to get data and last evulated key and storing them
       const {Items, LastEvaluatedKey} = await categoryQuery('trending');

@@ -10,7 +10,8 @@ export default function Intro() {
       <Image
         style={styles.introLogo}
         source={{
-          uri: 'https://i.imgur.com/Ke05iFf.png',
+          uri: 'https://i.imgur.com/6ldhpgg.png', //Sumacharr image
+          // uri: 'https://i.imgur.com/Ke05iFf.png', // Summize image
         }}
       />
     </View>
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
   },
   introLogo: {
     height: screenHeight * 0.2,
-    width: screenWidth * 0.7,
+    width: screenWidth * 0.9,
+    top: -screenHeight * 0.15,
   },
 });

@@ -1,4 +1,11 @@
 {
   "name": "Summize_v1",
-  "displayName": "Summize_v1"
+  "displayName": "Summize_v1",
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "111a460d-c684-434d-83ee-df071cd583f4"
+      }
+    }
+  }
 }

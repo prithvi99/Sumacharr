@@ -8,6 +8,7 @@ const colors = {
     container: '#1b1b1b',
     loaderHome: '#a9a9a9',
     readColor: '#808080',
+    toastBg: '#222222',
   },
   dark: {
     primary: '#121212',
@@ -18,6 +19,7 @@ const colors = {
     container: '#ffffff',
     loaderHome: '#666666',
     readColor: '#a9a9a9',
+    toastBg: '#e9e9e9',
   },
   primary: '#f9f9f9',
 };

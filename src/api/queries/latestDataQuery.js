@@ -1,15 +1,23 @@
-import Config from 'react-native-config';
-import AWS from 'aws-sdk';
+// import Config from 'react-native-config';
+// import AWS from 'aws-sdk';
 
-// AND GSI1SK = :sk
+// // AND GSI1SK = :sk
+
+// AWS.config.update({
+//   region: 'ca-central-1',
+//   accessKeyId: Config.AWS_ACCESS_KEY_ID,
+//   secretAccessKey: Config.AWS_SECRET_ACCESS_KEY,
+//   dynamoDbCrc32: false,
+// });
+
+// const dynamoDBClient = new AWS.DynamoDB.DocumentClient();
+
+const AWS = require('../../../awsConfig');
 
 AWS.config.update({
-  region: Config.AWS_REGION,
-  accessKeyId: Config.AWS_ACCESS_KEY_ID,
-  secretAccessKey: Config.AWS_SECRET_ACCESS_KEY,
   dynamoDbCrc32: false,
 });
-
+// DynamoDB client
 const dynamoDBClient = new AWS.DynamoDB.DocumentClient();
 
 export const latestDataQuery = async (time, lastKey) => {
@@ -41,7 +49,7 @@ export const latestDataQuery = async (time, lastKey) => {
       return {Items: result.Items, LastEvaluatedKey: result.LastEvaluatedKey};
     }
   } catch (error) {
-    console.error('Error fetching data from DynamoDB:', error);
+    console.error('Error fetching data from DynamoDB latest query:', error);
     throw error;
   }
 };

@@ -32,15 +32,18 @@ export default function NewsSlidesHeadlineImages({item, index, onPress}) {
   return (
     <Pressable
       onPress={() => onPress(item)}
-      style={styles.newsSlideImageContainer}>
+      style={[
+        styles.newsSlideImageContainer,
+        {backgroundColor: colors[currentThemeColor].secondary},
+      ]}>
       <FastImage
         source={{uri: newsImageLink, priority: FastImage.priority.high}}
         style={styles.newsSlideImage}
       />
       <LinearGradient
-        start={{x: 0.5, y: 1}} // Start at the bottom center
+        start={{x: 0.5, y: 1}}
         end={{x: 0.5, y: 0}}
-        colors={['rgba(0,0,0,.7)', 'transparent']} // Adjust the colors as needed
+        colors={['rgba(0,0,0,.7)', 'transparent']}
         style={[styles.newsSlideImageGradient, {zIndex: 1}]}
       />
       <View style={styles.newsSlideContentContainer}>

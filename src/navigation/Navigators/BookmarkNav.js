@@ -6,8 +6,9 @@ import colors from '../../../theme/colors';
 import CategoriesNewsPost from '../../components/CategoriesNewsPost/CategoriesNewsPost';
 import OpenLinkInBrowser from '../../components/OpenLinkInBrowser/OpenLinkInBrowser';
 import BookmarkNewsScreen from '../Screens/BookmarkNewsScreen/BookmarkNewsScreen';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 function BookmarkNav() {
   const currentThemeColor = useSelector(state => state.colorScheme.themeColor);
@@ -36,7 +37,12 @@ function BookmarkNav() {
 
   return (
     //Stack navigator for bookmark screen for users to navigate to CategoriesNewsPost page and OpenLinkInBrowser page
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        gestureEnabled: true,
+        gestureDirection: 'horizontal',
+        gestureResponseDistance: 200,
+      }}>
       {/* Bookmark Screen */}
       <Stack.Screen
         name="BookmarkStories"
@@ -57,12 +63,12 @@ function BookmarkNav() {
       <Stack.Screen
         name="CategoriesNewsPost"
         component={CategoriesNewsPost}
-        options={
-          {
-            // headerBackTitleVisible: false,
-            // headerShown: false,
-          }
-        }
+        options={{
+          gestureDirection: 'horizontal',
+          gestureEnabled: true,
+          // headerBackTitleVisible: false,
+          // headerShown: false,
+        }}
       />
 
       {/* Browser screen */}
@@ -71,6 +77,8 @@ function BookmarkNav() {
         component={OpenLinkInBrowser}
         options={{
           headerBackTitleVisible: false,
+          gestureDirection: 'horizontal',
+          gestureEnabled: true,
         }}
       />
     </Stack.Navigator>

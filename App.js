@@ -7,7 +7,7 @@
 
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import MainContainer from './src/navigation/Navigators/MainContainer';
 import {useSelector} from 'react-redux';
 import colors from './theme/colors';
@@ -37,9 +37,17 @@ const App = () => {
     return <Intro />;
   }
 
+  const MyTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: colors[currentThemeColor].primary,
+    },
+  };
+
   return (
     //Navigation container wrapping the main application
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <SafeAreaView
         style={[
           styles.container,

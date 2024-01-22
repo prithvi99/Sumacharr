@@ -5,6 +5,8 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {categoryQuery} from '../api/queries/categoryQuery';
 import NewsPost from '../NewsPost/NewsPost';
 import {latestDataQuery} from '../../api/queries/latestDataQuery';
+import colors from '../../../theme/colors';
+import {useSelector} from 'react-redux';
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -13,6 +15,8 @@ const FlipCard = ({posts, lastItemKey}) => {
   const [lastKey, setLastKey] = useState(lastItemKey);
   const [activeIndex, setActiveIndex] = useState();
   const [loadingMore, setLoadingMore] = useState(false);
+
+  const currentThemeColor = useSelector(state => state.colorScheme.themeColor);
 
   const isLastItem = index => index === data.length - 1;
 
@@ -27,7 +31,7 @@ const FlipCard = ({posts, lastItemKey}) => {
     try {
       setLoadingMore(true);
       const {Items, LastEvaluatedKey} = await latestDataQuery(
-        '2024-01-18',
+        '2024-01-21',
         lastKey,
       );
 
@@ -47,7 +51,11 @@ const FlipCard = ({posts, lastItemKey}) => {
 
   return (
     <SafeAreaView>
-      <View style={styles.carousel}>
+      <View
+        style={[
+          styles.carousel,
+          {backgroundColor: colors[currentThemeColor].secondary},
+        ]}>
         <Carousel
           layout={'stack'}
           data={data}
@@ -65,7 +73,6 @@ const FlipCard = ({posts, lastItemKey}) => {
 const styles = StyleSheet.create({
   carousel: {
     height: screenHeight,
-    backgroundColor: 'black',
   },
 });
 

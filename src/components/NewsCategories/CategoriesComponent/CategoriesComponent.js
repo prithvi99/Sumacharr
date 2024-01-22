@@ -28,11 +28,12 @@ const CategoriesComponent = ({categoryName}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // await new Promise(resolve => setTimeout(resolve, 2000));
         const {Items, LastEvaluatedKey} = await categoryQuery(categoryName);
         setData(Items);
         setLastKey(LastEvaluatedKey);
         setHasMoreData(!!LastEvaluatedKey);
+        // console.log('Last keys: ', LastEvaluatedKey);
       } catch (error) {
         console.log(error);
       }

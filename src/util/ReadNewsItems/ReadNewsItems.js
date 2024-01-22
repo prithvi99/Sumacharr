@@ -18,7 +18,7 @@ export const ReadNews = async (setReadItemsIndices, item, index) => {
       const elapsedMinutes =
         (currentTime - parseInt(lastReadTimestamp)) / (1000 * 60);
 
-      if (elapsedMinutes >= 2) {
+      if (elapsedMinutes >= 30) {
         await AsyncStorage.removeItem(READ_KEY);
       }
     }

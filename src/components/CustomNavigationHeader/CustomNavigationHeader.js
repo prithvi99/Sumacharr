@@ -17,8 +17,6 @@ const screenWidth = Dimensions.get('window').width;
 export default function CustomNavigationHeader({navigation, route}) {
   const {post, url, profileImg, screenName} = route.params;
 
-  console.log(screenName);
-
   const currentThemeColor = useSelector(state => state.colorScheme.themeColor);
 
   const newsImgLargeArray = post?.NewsSourceProfileImgLarge?.split(' ');
