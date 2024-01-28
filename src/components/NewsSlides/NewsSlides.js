@@ -2,9 +2,9 @@ import {Dimensions, FlatList, StyleSheet, View} from 'react-native';
 import React, {useRef} from 'react';
 import navigateOnNewsPress from '../../util/NavigateOnNewsPress/NavigateOnNewsPress';
 import NewsSlidesHeadlineImages from '../NewsSlidesHeadlineImages/NewsSlideHeadlineImages';
+import {SCREEN_WIDTH} from '../../../assets/constants/Constants';
 
-const screenWidth = Dimensions.get('window').width;
-const itemWidth = screenWidth * 0.85;
+const itemWidth = SCREEN_WIDTH * 0.85;
 
 export default function NewsSlides({data, navigation}) {
   const flatListRef = useRef(null);

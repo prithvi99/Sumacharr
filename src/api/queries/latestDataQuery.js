@@ -1,15 +1,23 @@
-import Config from 'react-native-config';
-import AWS from 'aws-sdk';
+// import Config from 'react-native-config';
+// import AWS from 'aws-sdk';
 
-// AND GSI1SK = :sk
+// // AND GSI1SK = :sk
+
+// AWS.config.update({
+//   region: 'ca-central-1',
+//   accessKeyId: Config.AWS_ACCESS_KEY_ID,
+//   secretAccessKey: Config.AWS_SECRET_ACCESS_KEY,
+//   dynamoDbCrc32: false,
+// });
+
+// const dynamoDBClient = new AWS.DynamoDB.DocumentClient();
+
+const AWS = require('../../../awsConfig');
 
 AWS.config.update({
-  region: Config.AWS_REGION,
-  accessKeyId: Config.AWS_ACCESS_KEY_ID,
-  secretAccessKey: Config.AWS_SECRET_ACCESS_KEY,
   dynamoDbCrc32: false,
 });
-
+// DynamoDB client
 const dynamoDBClient = new AWS.DynamoDB.DocumentClient();
 
 export const latestDataQuery = async (time, lastKey) => {
@@ -20,9 +28,11 @@ export const latestDataQuery = async (time, lastKey) => {
     ExpressionAttributeValues: {
       ':pk': `DATE#${time}`,
     },
-    FilterExpression: 'attribute_exists(#summary)',
+    FilterExpression:
+      'attribute_exists(#summary) AND attribute_exists(#NewsImg)',
     ExpressionAttributeNames: {
       '#summary': 'summary',
+      '#NewsImg': 'NewsImg',
     },
     Limit: 10,
     ScanIndexForward: false,
@@ -37,11 +47,12 @@ export const latestDataQuery = async (time, lastKey) => {
   try {
     // console.log('inside try Params: ', params);
     const result = await dynamoDBClient.query(params).promise();
+    // console.log('latest Data: ', result.Items.length);
     if (result.Items) {
       return {Items: result.Items, LastEvaluatedKey: result.LastEvaluatedKey};
     }
   } catch (error) {
-    console.error('Error fetching data from DynamoDB:', error);
+    console.error('Error fetching data from DynamoDB latest query:', error);
     throw error;
   }
 };

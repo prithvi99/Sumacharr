@@ -8,6 +8,8 @@ import TopStories from '../../../components/TopStories/TopStories';
 import {useNavigation} from '@react-navigation/native';
 import TopStoriesCustomLoader from '../../../components/ContentLoaders/TopStoriesCustomLoader/TopStoriesCustomLoader';
 import navigateOnNewsPress from '../../../util/NavigateOnNewsPress/NavigateOnNewsPress';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {EXPIRY_TIME} from '../../../../assets/constants/Constants';
 
 export default function TrendingScreen() {
   const [data, setData] = useState(null); //To store and set data
@@ -18,26 +20,82 @@ export default function TrendingScreen() {
 
   const navigation = useNavigation();
 
-  //Query to fetch data
-  const fetchData = useCallback(async () => {
-    //Try to fetch data by calling category query and catch errors
+  const onRefresh = async () => {
+    setRefreshing(true);
     try {
-      setRefreshing(true); //set loading to true while fetching data
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      //passing categoryQuery ('trending') as paramater - awaiting to get data and last evulated key and storing them
-      const {Items, LastEvaluatedKey} = await categoryQuery('trending');
-
-      //setting the above received items respectivelly
-      setData(Items);
-      setLastKey(LastEvaluatedKey);
-    } catch (error) {
-      console.error(error);
+      await fetchData();
     } finally {
-      //set refreshing false after receiving the data
       setRefreshing(false);
     }
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    try {
+      const storageKeyName = `trendingLastKey`;
+      const savedData = await AsyncStorage.getItem(storageKeyName);
+
+      // Check if there's any existing data
+      if (savedData !== null) {
+        const storedData = JSON.parse(savedData);
+        const currentTimestamp = Math.floor(Date.now() / 1000);
+
+        // Check if the stored data has expired
+        if (currentTimestamp >= storedData?.expiryTime) {
+          // Remove expired data
+          await AsyncStorage.removeItem(storageKeyName);
+        } else {
+          // Data is still valid, you may use it if needed
+          const {Items, LastEvaluatedKey} = await categoryQuery(
+            'trending',
+            storedData.lastKey,
+          );
+
+          setData(Items);
+          setLastKey(LastEvaluatedKey);
+          setHasMoreData(!!LastEvaluatedKey);
+
+          // Update the last key and expiration time
+          const now = new Date();
+          now.setMinutes(now.getMinutes() + EXPIRY_TIME);
+          const expiryTimeInTimestamp = Math.floor(now.getTime() / 1000);
+
+          const newData = {
+            lastKey: LastEvaluatedKey,
+            expiryTime: expiryTimeInTimestamp,
+          };
+
+          await AsyncStorage.setItem(storageKeyName, JSON.stringify(newData));
+
+          return; // Stop further execution as the data has been loaded
+        }
+      }
+
+      // If execution reaches here, either there was no existing data or it was removed
+      const {Items, LastEvaluatedKey} = await categoryQuery('trending', null);
+
+      setData(Items);
+      setLastKey(LastEvaluatedKey);
+      setHasMoreData(!!LastEvaluatedKey);
+
+      // Store initial data with expiration time
+      const now = new Date();
+      now.setMinutes(now.getMinutes() + 1); // Add 5 minutes to the current time
+      const expiryTimeInTimestamp = Math.floor(now.getTime() / 1000);
+
+      const newData = {
+        lastKey: LastEvaluatedKey,
+        expiryTime: expiryTimeInTimestamp,
+      };
+
+      await AsyncStorage.setItem(storageKeyName, JSON.stringify(newData));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   //Query to fetch more data when user reached end of previous data
   const fetchMoreData = useCallback(async () => {
@@ -73,12 +131,6 @@ export default function TrendingScreen() {
     }
   }, [lastKey, hasMoreData, loadingMore]); //calling fetchMoreData according to changes in the fowllowing
 
-  //refresh to call data
-  const onRefresh = useCallback(() => {
-    setRefreshing(true);
-    fetchData();
-  }, [fetchData]);
-
   //calling Topstories to render data
   const renderNewsItem = useCallback(
     ({item, index}) => (
@@ -93,20 +145,6 @@ export default function TrendingScreen() {
 
   //Limiting number of items to display
   const limitedData = useMemo(() => (data ? data.slice(0, 30) : []), [data]);
-
-  //Fetching data
-  useEffect(() => {
-    const fetchDataAsync = async () => {
-      try {
-        setData(null);
-        await fetchData();
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchDataAsync();
-  }, [fetchData]);
 
   return (
     <View style={{backgroundColor: colors[currentThemeColor].primary, flex: 1}}>
@@ -127,3 +165,42 @@ export default function TrendingScreen() {
     </View>
   );
 }
+
+//  const onRefresh = useCallback(() => {
+//    setRefreshing(true);
+//    fetchData();
+//  }, [fetchData]);
+
+//  useEffect(() => {
+//    const fetchDataAsync = async () => {
+//      try {
+//        setData(null);
+//        await fetchData();
+//      } catch (error) {
+//        console.error(error);
+//      }
+//    };
+
+//    fetchDataAsync();
+//  }, [fetchData]);
+
+//  //Query to fetch data
+//  const fetchData = useCallback(async () => {
+//    //Try to fetch data by calling category query and catch errors
+//    try {
+//      setRefreshing(true); //set loading to true while fetching data
+//      // await new Promise(resolve => setTimeout(resolve, 2000));
+
+//      //passing categoryQuery ('trending') as paramater - awaiting to get data and last evulated key and storing them
+//      const {Items, LastEvaluatedKey} = await categoryQuery('trending');
+
+//      //setting the above received items respectivelly
+//      setData(Items);
+//      setLastKey(LastEvaluatedKey);
+//    } catch (error) {
+//      console.error(error);
+//    } finally {
+//      //set refreshing false after receiving the data
+//      setRefreshing(false);
+//    }
+//  }, []);

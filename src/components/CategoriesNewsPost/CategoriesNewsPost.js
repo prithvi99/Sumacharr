@@ -7,9 +7,7 @@ import NewsContent from '../NewsPostComponents/NewsContent/NewsContent';
 import OtherSources from '../NewsPostComponents/OtherSources/OtherSources';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import CustomNavigationHeader from '../CustomNavigationHeader/CustomNavigationHeader';
-
-const screenHeight = Dimensions.get('window').height;
-const screenWidth = Dimensions.get('window').width;
+import {SCREEN_HEIGHT, SCREEN_WIDTH} from '../../../assets/constants/Constants';
 
 const CategoriesNewsPost = () => {
   const navigation = useNavigation();
@@ -57,8 +55,8 @@ const CategoriesNewsPost = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: screenHeight,
-    width: screenWidth,
+    height: SCREEN_HEIGHT,
+    width: SCREEN_WIDTH,
     position: 'absolute',
   },
   profileLargeImage: {

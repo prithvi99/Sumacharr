@@ -1,5 +1,4 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import NewsTabs from '../Screens/NewsTabsScreen/NewsTabs';
 import CategoriesNewsPost from '../../components/CategoriesNewsPost/CategoriesNewsPost';
 import colors from '../../../theme/colors';
@@ -7,16 +6,14 @@ import {useSelector} from 'react-redux';
 import {View} from 'react-native';
 import OpenLinkInBrowser from '../../components/OpenLinkInBrowser/OpenLinkInBrowser';
 import {getFocusedRouteNameFromRoute, useRoute} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {SCREEN_WIDTH} from '../../../assets/constants/Constants';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const CategoriesStackNavigator = () => {
   //Get current theme color from Redux
   const currentThemeColor = useSelector(state => state.colorScheme.themeColor);
-  const route = useRoute();
-  const params = route.params;
-
-  const focusedRoute = getFocusedRouteNameFromRoute(route);
 
   return (
     <Stack.Navigator
@@ -27,6 +24,9 @@ const CategoriesStackNavigator = () => {
           // backgroundColor: colors[currentThemeColor].primary,
         },
         headerTintColor: currentThemeColor === 'light' ? '#000' : '#ffffff',
+        gestureEnabled: true,
+        gestureDirection: 'horizontal',
+        gestureResponseDistance: SCREEN_WIDTH,
       }}>
       <Stack.Screen
         name="NewsTabs"

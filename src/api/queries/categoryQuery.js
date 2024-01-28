@@ -1,15 +1,8 @@
-import Config from 'react-native-config';
-import AWS from 'aws-sdk';
-
-//Passing key info for Dynamodb query
+const AWS = require('../../../awsConfig');
 AWS.config.update({
-  region: Config.AWS_REGION,
-  accessKeyId: Config.AWS_ACCESS_KEY_ID,
-  secretAccessKey: Config.AWS_SECRET_ACCESS_KEY,
   dynamoDbCrc32: false,
 });
-
-//Creating Dynamodb client to make queries
+// DynamoDB client
 const dynamoDBClient = new AWS.DynamoDB.DocumentClient();
 
 //Category query function to make queries according to different categories

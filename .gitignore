@@ -83,3 +83,6 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+# Ignore .env files
+.env*

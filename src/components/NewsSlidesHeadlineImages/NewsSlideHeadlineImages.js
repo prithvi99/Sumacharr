@@ -13,10 +13,9 @@ import TimeAgo from '../../util/TimeAgo/TimeAgo';
 import colors from '../../../theme/colors';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
+import {SCREEN_HEIGHT, SCREEN_WIDTH} from '../../../assets/constants/Constants';
 
-const screenHeight = Dimensions.get('window').height;
-const screenWidth = Dimensions.get('window').width;
-const itemWidth = screenWidth * 0.85;
+const itemWidth = SCREEN_WIDTH * 0.85;
 
 export default function NewsSlidesHeadlineImages({item, index, onPress}) {
   const newsImgArray = item.NewsImg?.split(' ');
@@ -32,15 +31,18 @@ export default function NewsSlidesHeadlineImages({item, index, onPress}) {
   return (
     <Pressable
       onPress={() => onPress(item)}
-      style={styles.newsSlideImageContainer}>
+      style={[
+        styles.newsSlideImageContainer,
+        {backgroundColor: colors[currentThemeColor].secondary},
+      ]}>
       <FastImage
         source={{uri: newsImageLink, priority: FastImage.priority.high}}
         style={styles.newsSlideImage}
       />
       <LinearGradient
-        start={{x: 0.5, y: 1}} // Start at the bottom center
+        start={{x: 0.5, y: 1}}
         end={{x: 0.5, y: 0}}
-        colors={['rgba(0,0,0,.7)', 'transparent']} // Adjust the colors as needed
+        colors={['rgba(0,0,0,.7)', 'transparent']}
         style={[styles.newsSlideImageGradient, {zIndex: 1}]}
       />
       <View style={styles.newsSlideContentContainer}>
@@ -130,7 +132,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     // width: '100%',
     // height: '100%',
-    height: screenHeight * 0.3,
+    height: SCREEN_HEIGHT * 0.3,
     width: itemWidth,
     justifyContent: 'space-between',
 
@@ -167,12 +169,13 @@ const styles = StyleSheet.create({
   newsSlideHeadlineContainer: {
     padding: 10,
     borderRadius: 5,
+    minHeight: 60,
   },
   newsSlideHeadline: {
     fontSize: 16,
     fontWeight: 500,
   },
   flatListContentContainer: {
-    paddingHorizontal: (screenWidth - itemWidth) / 2,
+    paddingHorizontal: (SCREEN_WIDTH - itemWidth) / 2,
   },
 });

@@ -18,7 +18,7 @@ export const ReadNews = async (setReadItemsIndices, item, index) => {
       const elapsedMinutes =
         (currentTime - parseInt(lastReadTimestamp)) / (1000 * 60);
 
-      if (elapsedMinutes >= 2) {
+      if (elapsedMinutes >= 30) {
         await AsyncStorage.removeItem(READ_KEY);
       }
     }
@@ -34,7 +34,7 @@ export const ReadNews = async (setReadItemsIndices, item, index) => {
         JSON.stringify([...hasReadNewsArray, item.PK]),
       );
 
-      console.log('read items: ', hasReadNewsArray);
+      // console.log('read items: ', hasReadNewsArray);
       markItemAsRead(setReadItemsIndices, index);
     } else {
       await AsyncStorage.setItem(READ_KEY, JSON.stringify([item.PK]));

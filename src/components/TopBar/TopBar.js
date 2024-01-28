@@ -25,7 +25,8 @@ export default function TopBar({titleIndex, setIndex, routes}) {
         <Text
           style={[
             titleIndex === index ? styles.activeItemText : styles.itemText,
-            {color: colors[currentThemeColor].textColor},
+            {color: currentThemeColor === 'light' ? '#222222' : '#e9e9e9'},
+            // {color: colors[currentThemeColor].textColor},
           ]}>
           {item.title}
         </Text>
@@ -61,12 +62,17 @@ export default function TopBar({titleIndex, setIndex, routes}) {
       <View style={styles.topBarContainer}>
         <Image
           style={{height: 50, width: 50}}
-          source={{
-            uri:
-              currentThemeColor === 'light'
-                ? 'https://i.imgur.com/D3xn7Au.png'
-                : 'https://i.imgur.com/mslxKra.png',
-          }}
+          source={
+            currentThemeColor === 'light'
+              ? require('../../../assets/pictures/sumacharr_light_logo.png')
+              : require('../../../assets/pictures/sumacharr_dark_logo.png')
+          }
+          // source={{
+          //   uri:
+          //     currentThemeColor === 'light'
+          //       ? 'https://i.imgur.com/D3xn7Au.png'
+          //       : 'https://i.imgur.com/mslxKra.png',
+          // }}
         />
         <FlatList
           ref={flatListRef}
@@ -78,15 +84,16 @@ export default function TopBar({titleIndex, setIndex, routes}) {
           showsHorizontalScrollIndicator={false}
           getItemLayout={getItemLayout}
         />
+        <View style={{paddingRight: 10}}></View>
 
-        <Pressable onPress={refresh}>
+        {/* <Pressable onPress={refresh}>
           <AntDesign
             color={colors[currentThemeColor].textColor}
             style={styles.topBarIcons}
             name={'reload1'}
             size={25}
           />
-        </Pressable>
+        </Pressable> */}
       </View>
       <View
         style={[
@@ -101,6 +108,7 @@ export default function TopBar({titleIndex, setIndex, routes}) {
 const styles = StyleSheet.create({
   container: {
     position: 'relative',
+    // paddingRight: 2,
   },
   topBarContainer: {
     alignItems: 'center',

@@ -14,8 +14,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2A0DCA4E0D424CC58B0519DA /* LibreBaskerville-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8E4CA32C56A4A40AD0BFBAA /* LibreBaskerville-Italic.ttf */; };
 		41C2D6E20D7B45EDB76ECDA4 /* LibreBaskerville-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4487E3F7F3FC4A6DAC2CE20E /* LibreBaskerville-Regular.ttf */; };
+		435513EA879C9067270EA79E /* libPods-Summize_v1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 177B6CCF26D6CDF395F688CA /* libPods-Summize_v1Tests.a */; };
 		4424C7027F3F4021955C8D28 /* LibreBaskerville-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B5489CE724D40628B83D75E /* LibreBaskerville-Bold.ttf */; };
-		7699B88040F8A987B510C191 /* libPods-Summize_v1-Summize_v1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Summize_v1-Summize_v1Tests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -39,10 +39,12 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Summize_v1/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Summize_v1/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Summize_v1/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Summize_v1-Summize_v1Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Summize_v1-Summize_v1Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		177B6CCF26D6CDF395F688CA /* libPods-Summize_v1Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Summize_v1Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5489CE724D40628B83D75E /* LibreBaskerville-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LibreBaskerville-Bold.ttf"; path = "../assets/fonts/LibreBaskerville-Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Summize_v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summize_v1.debug.xcconfig"; path = "Target Support Files/Pods-Summize_v1/Pods-Summize_v1.debug.xcconfig"; sourceTree = "<group>"; };
 		4487E3F7F3FC4A6DAC2CE20E /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LibreBaskerville-Regular.ttf"; path = "../assets/fonts/LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
+		457E1193459D8334AA6B2953 /* Pods-Summize_v1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summize_v1Tests.debug.xcconfig"; path = "Target Support Files/Pods-Summize_v1Tests/Pods-Summize_v1Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		4CCC976068454FAB836A232C /* Pods-Summize_v1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summize_v1Tests.release.xcconfig"; path = "Target Support Files/Pods-Summize_v1Tests/Pods-Summize_v1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Summize_v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summize_v1.release.xcconfig"; path = "Target Support Files/Pods-Summize_v1/Pods-Summize_v1.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Summize_v1-Summize_v1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summize_v1-Summize_v1Tests.debug.xcconfig"; path = "Target Support Files/Pods-Summize_v1-Summize_v1Tests/Pods-Summize_v1-Summize_v1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Summize_v1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Summize_v1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-Summize_v1-Summize_v1Tests.a in Frameworks */,
+				435513EA879C9067270EA79E /* libPods-Summize_v1Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +109,7 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-Summize_v1.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-Summize_v1-Summize_v1Tests.a */,
+				177B6CCF26D6CDF395F688CA /* libPods-Summize_v1Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,6 +163,8 @@
 				5709B34CF0A7D63546082F79 /* Pods-Summize_v1.release.xcconfig */,
 				5B7EB9410499542E8C5724F5 /* Pods-Summize_v1-Summize_v1Tests.debug.xcconfig */,
 				89C6BE57DB24E9ADA2F236DE /* Pods-Summize_v1-Summize_v1Tests.release.xcconfig */,
+				457E1193459D8334AA6B2953 /* Pods-Summize_v1Tests.debug.xcconfig */,
+				4CCC976068454FAB836A232C /* Pods-Summize_v1Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -176,8 +180,6 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,7 +320,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Summize_v1-Summize_v1Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Summize_v1Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -347,23 +349,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summize_v1-Summize_v1Tests/Pods-Summize_v1-Summize_v1Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summize_v1-Summize_v1Tests/Pods-Summize_v1-Summize_v1Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summize_v1-Summize_v1Tests/Pods-Summize_v1-Summize_v1Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,23 +364,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summize_v1/Pods-Summize_v1-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summize_v1-Summize_v1Tests/Pods-Summize_v1-Summize_v1Tests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summize_v1-Summize_v1Tests/Pods-Summize_v1-Summize_v1Tests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summize_v1-Summize_v1Tests/Pods-Summize_v1-Summize_v1Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -450,7 +418,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-Summize_v1-Summize_v1Tests.debug.xcconfig */;
+			baseConfigurationReference = 457E1193459D8334AA6B2953 /* Pods-Summize_v1Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -478,7 +446,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-Summize_v1-Summize_v1Tests.release.xcconfig */;
+			baseConfigurationReference = 4CCC976068454FAB836A232C /* Pods-Summize_v1Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +479,8 @@
 				DEVELOPMENT_TEAM = 6KR4294422;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Summize_v1/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,6 +492,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.example.Sumacharr;
 				PRODUCT_NAME = Summize_v1;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -538,6 +509,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6KR4294422;
 				INFOPLIST_FILE = Summize_v1/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -549,6 +522,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.example.Sumacharr;
 				PRODUCT_NAME = Summize_v1;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

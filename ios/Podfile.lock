@@ -349,7 +349,7 @@ PODS:
     - React-Core
   - react-native-get-random-values (1.10.0):
     - React-Core
-  - react-native-netinfo (9.3.10):
+  - react-native-netinfo (9.5.0):
     - React-Core
   - react-native-pager-view (6.2.0):
     - React-Core
@@ -456,6 +456,9 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
+  - RNGestureHandler (2.14.1):
+    - RCT-Folly (= 2021.07.22.00)
+    - React-Core
   - RNInAppBrowser (3.7.0):
     - React-Core
   - RNScreens (3.20.0):
@@ -548,6 +551,7 @@ DEPENDENCIES:
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - RNFastImage (from `../node_modules/react-native-fast-image`)
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNInAppBrowser (from `../node_modules/react-native-inappbrowser-reborn`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNShare (from `../node_modules/react-native-share`)
@@ -665,6 +669,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-picker/picker"
   RNFastImage:
     :path: "../node_modules/react-native-fast-image"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNInAppBrowser:
     :path: "../node_modules/react-native-inappbrowser-reborn"
   RNScreens:
@@ -716,7 +722,7 @@ SPEC CHECKSUMS:
   React-logger: 3f8ebad1be1bf3299d1ab6d7f971802d7395c7ef
   react-native-config: 86038147314e2e6d10ea9972022aa171e6b1d4d8
   react-native-get-random-values: 384787fd76976f5aec9465aff6fa9e9129af1e74
-  react-native-netinfo: ccbe1085dffd16592791d550189772e13bf479e2
+  react-native-netinfo: 48c5f79a84fbc3ba1d28a8b0d04adeda72885fa8
   react-native-pager-view: 0ccb8bf60e2ebd38b1f3669fa3650ecce81db2df
   react-native-safe-area-context: 1d596539b05a78f2b346e954e7c577f6f9be7544
   react-native-view-shot: 6b7ed61d77d88580fed10954d45fad0eb2d47688
@@ -737,6 +743,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 618d03a5f52fbccb3d7010076bc54712844c18ef
   RNCPicker: 0bc2f0a29abcca7b7ed44a2d036aac9ab6d25700
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
+  RNGestureHandler: fe2be3be5598dc74329b211c58c9f2d231461769
   RNInAppBrowser: e36d6935517101ccba0e875bac8ad7b0cb655364
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RNShare: d82e10f6b7677f4b0048c23709bd04098d5aee6c
@@ -748,6 +755,6 @@ SPEC CHECKSUMS:
   Yoga: d56980c8914db0b51692f55533409e844b66133c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 12a4363273a52a01dedc185c370e87309525536e
+PODFILE CHECKSUM: 4869c05d8e3252d209a0902b80f20bcca0a934e9
 
 COCOAPODS: 1.12.1

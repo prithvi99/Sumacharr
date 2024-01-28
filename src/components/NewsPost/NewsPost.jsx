@@ -14,12 +14,12 @@ import NewsContent from '../NewsPostComponents/NewsContent/NewsContent';
 import OtherSources from '../NewsPostComponents/OtherSources/OtherSources';
 import SocialButtons from '../NewsPostComponents/SocialButtons/SocialButtons';
 import {useRoute} from '@react-navigation/native';
-
-const screenHeight = Dimensions.get('window').height;
-const screenWidth = Dimensions.get('window').width;
+import {SCREEN_HEIGHT, SCREEN_WIDTH} from '../../../assets/constants/Constants';
+import Mockdata from '../../../assets/data.json';
 
 const NewsPost = props => {
   const {post} = props;
+  // const post = Mockdata;
 
   if (!post || !post.summary) {
     return null;
@@ -68,8 +68,8 @@ const NewsPost = props => {
 
 const styles = StyleSheet.create({
   container: {
-    height: screenHeight,
-    width: screenWidth,
+    height: SCREEN_HEIGHT,
+    width: SCREEN_WIDTH,
     position: 'absolute',
   },
 
