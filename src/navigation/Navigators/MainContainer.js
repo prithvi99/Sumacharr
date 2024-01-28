@@ -32,7 +32,7 @@ export default function MainContainer() {
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor:
-          currentThemeColor === 'light' ? '#000' : '#ffffff',
+          currentThemeColor === 'light' ? '#222222' : '#e9e9e9',
         headerShadowVisible: true,
         tabBarStyle: {
           backgroundColor: colors[currentThemeColor].primary,

@@ -7,6 +7,7 @@ import CategoriesNewsPost from '../../components/CategoriesNewsPost/CategoriesNe
 import OpenLinkInBrowser from '../../components/OpenLinkInBrowser/OpenLinkInBrowser';
 import BookmarkNewsScreen from '../Screens/BookmarkNewsScreen/BookmarkNewsScreen';
 import {createStackNavigator} from '@react-navigation/stack';
+import {SCREEN_WIDTH} from '../../../assets/constants/Constants';
 
 const Stack = createStackNavigator();
 
@@ -41,7 +42,7 @@ function BookmarkNav() {
       screenOptions={{
         gestureEnabled: true,
         gestureDirection: 'horizontal',
-        gestureResponseDistance: 200,
+        gestureResponseDistance: SCREEN_WIDTH,
       }}>
       {/* Bookmark Screen */}
       <Stack.Screen

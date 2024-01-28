@@ -1,20 +1,3 @@
-// import Config from 'react-native-config';
-// // require('dotenv').config();
-// import AWS from 'aws-sdk';
-
-// //Passing key info for Dynamodb query
-// AWS.config.update({
-//   region: 'ca-central-1',
-//   // accessKeyId: process.env.AWS_ACCESS_KEY,
-//   // accessSecretKey: process.env.AWS_SECRET_KEY,
-//   // accessKeyId: Config.AWS_ACCESS_KEY_ID,
-//   // secretAccessKey: Config.AWS_SECRET_ACCESS_KEY,
-//   dynamoDbCrc32: false,
-// });
-
-// //Creating Dynamodb client to make queries
-// const dynamoDBClient = new AWS.DynamoDB.DocumentClient();
-
 const AWS = require('../../../awsConfig');
 AWS.config.update({
   dynamoDbCrc32: false,

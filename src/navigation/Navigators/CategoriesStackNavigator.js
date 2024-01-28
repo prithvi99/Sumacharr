@@ -7,6 +7,7 @@ import {View} from 'react-native';
 import OpenLinkInBrowser from '../../components/OpenLinkInBrowser/OpenLinkInBrowser';
 import {getFocusedRouteNameFromRoute, useRoute} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {SCREEN_WIDTH} from '../../../assets/constants/Constants';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +26,7 @@ const CategoriesStackNavigator = () => {
         headerTintColor: currentThemeColor === 'light' ? '#000' : '#ffffff',
         gestureEnabled: true,
         gestureDirection: 'horizontal',
-        gestureResponseDistance: 200,
+        gestureResponseDistance: SCREEN_WIDTH,
       }}>
       <Stack.Screen
         name="NewsTabs"

@@ -57,20 +57,43 @@ export default function BookmarkNewsScreen() {
         flex: 1,
         backgroundColor: colors[currentThemeColor].primary,
       }}>
-      {loading ? (
-        <Text>Loading...</Text>
+      {storageValue.length > 0 ? (
+        loading ? (
+          <Text>Loading...</Text>
+        ) : (
+          <FlatList
+            //   key={globalBookmarkToggle ? 'bookmarked' : 'not-bookmarked'}
+            data={reversedStorageValue}
+            keyExtractor={(item, index) =>
+              item.PK || item.Id || index.toString()
+            }
+            renderItem={({item}) => (
+              // Pressable component to navigate to the detailed news screen on press
+              <Pressable onPress={() => navigateOnNewsPress(item, navigation)}>
+                <HighlightedNews item={item} bookmarkFlag={true} />
+              </Pressable>
+            )}
+          />
+        )
       ) : (
-        <FlatList
-          //   key={globalBookmarkToggle ? 'bookmarked' : 'not-bookmarked'}
-          data={reversedStorageValue}
-          keyExtractor={(item, index) => item.PK || item.Id || index.toString()}
-          renderItem={({item}) => (
-            // Pressable component to navigate to the detailed news screen on press
-            <Pressable onPress={() => navigateOnNewsPress(item, navigation)}>
-              <HighlightedNews item={item} bookmarkFlag={true} />
-            </Pressable>
-          )}
-        />
+        <View
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            flex: 1,
+            padding: 20,
+          }}>
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: currentThemeColor === 'light' ? '#222222' : '#e9e9e9',
+              textAlign: 'center',
+              lineHeight: 28,
+            }}>
+            Start exploring and save your favorite articles!
+          </Text>
+        </View>
       )}
     </View>
   );

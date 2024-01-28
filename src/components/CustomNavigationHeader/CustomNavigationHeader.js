@@ -11,8 +11,7 @@ import SocialButtons from '../NewsPostComponents/SocialButtons/SocialButtons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import colors from '../../../theme/colors';
 import {useSelector} from 'react-redux';
-
-const screenWidth = Dimensions.get('window').width;
+import {SCREEN_WIDTH} from '../../../assets/constants/Constants';
 
 export default function CustomNavigationHeader({navigation, route}) {
   const {post, url, profileImg, screenName} = route.params;
@@ -57,7 +56,7 @@ export default function CustomNavigationHeader({navigation, route}) {
             ? {
                 resizeMode: 'contain',
                 height: 80,
-                width: screenWidth * 0.18,
+                width: SCREEN_WIDTH * 0.18,
                 alignSelf: 'center',
                 justifyContent: 'center',
               }

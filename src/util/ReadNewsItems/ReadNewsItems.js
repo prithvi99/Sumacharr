@@ -34,7 +34,7 @@ export const ReadNews = async (setReadItemsIndices, item, index) => {
         JSON.stringify([...hasReadNewsArray, item.PK]),
       );
 
-      console.log('read items: ', hasReadNewsArray);
+      // console.log('read items: ', hasReadNewsArray);
       markItemAsRead(setReadItemsIndices, index);
     } else {
       await AsyncStorage.setItem(READ_KEY, JSON.stringify([item.PK]));

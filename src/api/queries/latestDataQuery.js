@@ -28,9 +28,11 @@ export const latestDataQuery = async (time, lastKey) => {
     ExpressionAttributeValues: {
       ':pk': `DATE#${time}`,
     },
-    FilterExpression: 'attribute_exists(#summary)',
+    FilterExpression:
+      'attribute_exists(#summary) AND attribute_exists(#NewsImg)',
     ExpressionAttributeNames: {
       '#summary': 'summary',
+      '#NewsImg': 'NewsImg',
     },
     Limit: 10,
     ScanIndexForward: false,
@@ -45,6 +47,7 @@ export const latestDataQuery = async (time, lastKey) => {
   try {
     // console.log('inside try Params: ', params);
     const result = await dynamoDBClient.query(params).promise();
+    // console.log('latest Data: ', result.Items.length);
     if (result.Items) {
       return {Items: result.Items, LastEvaluatedKey: result.LastEvaluatedKey};
     }

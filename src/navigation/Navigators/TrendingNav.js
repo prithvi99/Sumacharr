@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Dimensions} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
 import TrendingScreen from '../Screens/TrendingScreen/TrendingScreen';
@@ -7,6 +7,7 @@ import {useSelector} from 'react-redux';
 import colors from '../../../theme/colors';
 import OpenLinkInBrowser from '../../components/OpenLinkInBrowser/OpenLinkInBrowser';
 import CategoriesNewsPost from '../../components/CategoriesNewsPost/CategoriesNewsPost';
+import {SCREEN_WIDTH} from '../../../assets/constants/Constants';
 
 //Create Stack navigation using react navigation
 const Stack = createStackNavigator();
@@ -58,7 +59,7 @@ function TrendingNav() {
         header: props => <CustomHeader {...props} />,
         gestureEnabled: true,
         gestureDirection: 'horizontal',
-        gestureResponseDistance: 200,
+        gestureResponseDistance: SCREEN_WIDTH,
       }}>
       {/* Trending Screen */}
       <Stack.Screen name="Trending" component={TrendingScreen} />

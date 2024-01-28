@@ -13,9 +13,7 @@ import TimeAgo from '../../util/TimeAgo/TimeAgo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import FastImage from 'react-native-fast-image';
-
-const screenHeight = Dimensions.get('window').height;
-const screenWidth = Dimensions.get('window').width;
+import {SCREEN_HEIGHT} from '../../../assets/constants/Constants';
 
 export default function HighlightedNews({item, index, isRead, bookmarkFlag}) {
   const [isBookmarked, setIsBookmarked] = useState(true);
@@ -149,7 +147,7 @@ const styles = StyleSheet.create({
     },
   },
   HighlightedNewsImage: {
-    height: screenHeight * 0.27,
+    height: SCREEN_HEIGHT * 0.27,
     width: '100%',
     borderRadius: 10,
     position: 'relative',
