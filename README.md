@@ -22,7 +22,9 @@
 
 <img src="https://github.com/prithvi99/Sumacharr/assets/29856395/622b0c8a-a323-4d38-8fd7-61aa6d76804f" width="200">
 
+
 ### Categories Screen
+
 
 <img src="https://github.com/prithvi99/Sumacharr/assets/29856395/c27f6f39-9bf1-43b0-82c7-84c42a495fff" width="200">
 
@@ -35,4 +37,30 @@
 <img src="https://github.com/prithvi99/Sumacharr/assets/29856395/6fb29077-3e3d-42b3-a15e-6c7b4fcfbadf" width="200">
 
 <img src="https://github.com/prithvi99/Sumacharr/assets/29856395/c02abb94-32cf-4a62-b7be-e4aa67fd666a" width="200">
+
+
+## Trending Tab
+
+<img src="https://github.com/prithvi99/Sumacharr/assets/29856395/3ef5be75-87cb-41c3-b1e3-842ef61d0c31" width="200">
+
+
+## Bookmark Tab
+
+<img src="https://github.com/prithvi99/Sumacharr/assets/29856395/f33de3b6-ff03-47f7-8e6d-3c313063d519" width="200">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
