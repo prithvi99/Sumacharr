@@ -1,6 +1,17 @@
 # Welcome to Sumacharr
 
-![sumacharr](https://github.com/prithvi99/Sumacharr/assets/29856395/97d15117-1f8f-4c37-9a6d-4f0a0e4a7fe9)
+<img src="https://github.com/prithvi99/Sumacharr/assets/29856395/f7d5925a-7500-49a2-b2bf-1150e95acabf" width="200">
+
+<img src="https://github.com/prithvi99/Sumacharr/assets/29856395/213c2336-93d5-4cc6-941e-26dddc70a961" width="200">
+
+<img src="https://github.com/prithvi99/Sumacharr/assets/29856395/0960599f-38a1-410f-9bc9-0b22762939e1" width="200">
+
+<img src="https://github.com/prithvi99/Sumacharr/assets/29856395/131ead6a-760e-4a1f-a841-36c71c9d943e" width="200">
+
+<img src="https://github.com/prithvi99/Sumacharr/assets/29856395/837b21b6-8865-4bfa-a844-b3537ecdb156" width="200">
+
+<img src="https://github.com/prithvi99/Sumacharr/assets/29856395/05056102-5d3d-4c87-9b89-0d072177de7b" width="200">
+
 
 ## Intro Screen
 
